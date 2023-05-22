@@ -1,3 +1,4 @@
+"use client";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Serach";
@@ -8,18 +9,20 @@ export default function Navbar() {
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div className="py-4 border-b-[1px]">
         <Container>
-          <div className="
+          <div
+            className="
            flex
            flex-row
            justify-between
            items-center
            gap-3
            md:gap-0
-           ">
+           "
+          >
             <Logo></Logo>
-            <Search/>
-            <UserMenu/>
-           </div>
+            <Search />
+            <UserMenu />
+          </div>
         </Container>
       </div>
     </div>
