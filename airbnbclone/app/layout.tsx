@@ -1,6 +1,8 @@
 import "./globals.css";
 import { Nunito } from "next/font/google";
 import Navbar from "./components/navbar/Navbar";
+import ClientOnly from "./components/ClientOnly";
+import Modal from "./components/modals/Modal";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -17,9 +19,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito.className}>
-        <Navbar/>
+        <ClientOnly>
+          <Modal 
+          isOpen 
+          title="Hello world"
+          actionLabel="Submit" />
+          <Navbar />
+        </ClientOnly>
         {children}
-        </body>
+      </body>
     </html>
   );
 }
+
+// writing Modal isOpen and isOpen={true} is same
